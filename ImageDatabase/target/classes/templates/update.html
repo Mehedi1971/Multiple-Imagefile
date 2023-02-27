@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/addimg}" enctype="multipart/form-data" th:object="${updatelist}"  method="POST">
+    <input type="hidden" th:field="*{id}" name="id" >
+    <input  type="text" th:field="*{name}" name="name" >
+<!--    <input type="checkbox" th:field="*{checkbox}" onclick="abc()" id="myCheck">-->
+    <!--    <button th:if="*{checkbox}?true:false" th:type=submit>update </button>-->
+<!--    <img alt="" th:src="*{'data:image/jpeg;base64,'+*{image}}" style="width: 30px;height: 30px;">-->
+
+        <div >
+            <input type="file"  name="file1" >
+            <input type="file"  name="file2" >
+        </div>
+    <input type="submit" >
+
+</form>
+</body>
+</html>

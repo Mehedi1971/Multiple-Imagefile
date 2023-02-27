@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div >
+    <div>
+        <p >Add Product</p>
+    </div>
+    <div >
+        <form th:action="@{/addimg}" method="post" enctype="multipart/form-data">
+
+            <!-- Name -->
+            <input th:type="name" name="name" id="name"
+                   placeholder="Name">
+
+
+            <div >
+                <input th:type="file" name="file1" >
+            </div> <div >
+                <input th:type="file" name="file2" >
+            </div>
+            <!-- Sign in button -->
+            <button  type="submit">add</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

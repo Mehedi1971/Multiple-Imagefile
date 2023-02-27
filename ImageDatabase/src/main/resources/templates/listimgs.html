@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/addimg}" class="btn buttons btn-primary btn-sm">Add</a>
+
+<table>
+    <tr>
+        <th>image1</th>
+        <th>image2</th>
+        <th>name</th>
+        <th>action</th>
+    </tr>
+    <tr  th:each="img : ${listofimg}">
+        <td ><img alt="" th:src="*{'data:image/jpeg;base64,'+{img.image1}}" style="width: 30px;height: 30px;"></td>
+        <td ><img alt="" th:src="*{'data:image/jpeg;base64,'+{img.image2}}" style="width: 30px;height: 30px;"></td>
+
+        <td th:text="${img.name}"></td>
+        <td >
+            <a th:href="@{/update/{id}(id=${img.id})}">update</a>
+
+            <a th:href="@{/delete/{id}(id=${img.id})}">delete</i></a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
